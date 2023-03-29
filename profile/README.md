@@ -7,6 +7,39 @@ It bundels knowleg from Inovativ Companys and Open Source Projects into Fundamen
 with more confidence and a incremental upgrade path that always works. Get less often broken by changes from projects you depend on that
 are not feature dependend like refactorings and other meta updates that are not realted to the code that you use.
 
+
+## How it all Starts?
+when you get the below example working you can start using that output 
+
+```
+git clone github.com/microsoft/vscode
+cd vscode
+## the current version used comes from ./scripts/code-web.sh & code-server.sh 
+## Error at the end can be fixed in ./build/gulpfile.js maybe
+yarn add -D node 16.14.2
+mkdir -p .build/node/v16.14.2
+ln -s ../../../node_modules/node/bin .build/node/v16.14.2/linux-x64
+
+## method one use patched yarn
+PATH=$(pwd)/node_modules/node/bin:$PATH yarn compile-web
+PATH=$(pwd)/node_modules/node/bin:$PATH ./scripts/code-web.sh
+
+## use docker
+
+```
+
+the output is needed to build the next step the monaco-editor this did create monaco-editor-core
+
+```
+git clone github.com/microsoft/vscode
+cd vscode
+sudo docker run -it --rm -v $(pwd):/vscode -w /vscode -u $(id -u):$(id -u) node:16.14 yarn install 
+sudo docker run -it --rm -v $(pwd):/vscode -w /vscode -u $(id -u):$(id -u) node:16.14 yarn run compile-web
+sudo docker run -it --rm -v $(pwd):/vscode -w /vscode -u $(id -u):$(id -u) node:16.14 yarn add -D node@16.14
+sudo docker run -it --rm -v $(pwd):/vscode -w /vscode -u $(id -u):$(id -u) node:16.14 yarn add -D node@16.14 ln -s ../../../node_modules/node/bin .build/node/v16.14.2/linux-x64
+```
+
+
 **Here are some ideas to get you started:**
 
 - 🙋‍♀️ Main Offer The Unlicense Code Editor delivered as Devtools Extension.
