@@ -24,7 +24,8 @@ are not feature dependend like refactorings and other meta updates that are not 
 ```
 
 ```ts
-(MIRROR='https://nodejs.org/dist/latest'; VERSION='-v19.x'; DIR=.; SYSTEM='linux-x64'; FILENAME=${(await (await fetch(`${MIRROR}${VERSION}`)).text()).split('\n').find(line=>line.indexOf(SYSTEM) && line.indexOf('tar.gz')).split('"')[1]})
+(MIRROR='https://nodejs.org/dist/latest'; VERSION='-v19.x'; DIR=.; SYSTEM='linux-x64'; FILENAME=${(await (await fetch(`${MIRROR}${VERSION}`)).text()).split('\n').find(line=>line.indexOf(SYSTEM) && line.indexOf('tar.gz')).split('"')[1]}; fetch(`${MIRROR}${VERSION}/${FILENAME}`).then(data=>data.body.pipeThrough(new DecompressionStream('gzip'))))
+// TODO: No untar implemented.
 ```
 
 
