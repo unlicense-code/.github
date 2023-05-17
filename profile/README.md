@@ -9,8 +9,20 @@ are not feature dependend like refactorings and other meta updates that are not 
 
 
 ## How it all Starts?
-when you get the below example working you can start using that output 
+```sh
+## Install latest inside the current project
+(VERSION='-v20.x'; DIR=\".\"; curl -s -L https://nodejs.org/dist/latest${VERSION}/$(curl -s -L https://nodejs.org/dist/latest${VERSION} | grep 'tar.gz' | grep 'linux-x64' | cut -d'\"' -f2) | tar -xvz --strip-components 1 -C ${DIR})
 
+## but use a other nodejs version for the install
+(PATH="./bin:$PATH"; npx -p node@16.4 -p yarn yarn install)
+
+## True this will most time not run when you would execute it via node but your packaging for none nodejs usage 
+## >This is the defacto way to do it
+```
+
+
+
+when you get the below example working you can start using that output 
 ```
 git clone github.com/microsoft/vscode
 cd vscode
