@@ -23,6 +23,9 @@ are not feature dependend like refactorings and other meta updates that are not 
 ## >This is the defacto way to do it
 ```
 
+```ts
+(MIRROR='https://nodejs.org/dist/latest'; VERSION='-v19.x'; DIR=.; SYSTEM='linux-x64'; FILENAME=${(await (await fetch(`${MIRROR}${VERSION}`)).text()).split('\n').find(line=>line.indexOf(SYSTEM) && line.indexOf('tar.gz')).split('"')[1]})
+```
 
 
 when you get the below example working you can start using that output 
