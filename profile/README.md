@@ -11,7 +11,7 @@ are not feature dependend like refactorings and other meta updates that are not 
 ## How it all Starts?
 ```sh
 ## Install latest inside the current project
-(VERSION='-v20.x'; DIR=\".\"; FILENAME=$(curl -s -L https://nodejs.org/dist/latest${VERSION} | grep 'tar.gz' | grep 'linux-x64' | cut -d'\"' -f2); curl -s -L https://nodejs.org/dist/latest${VERSION}/${FILENAME} | tar -xvz --strip-components 1 -C ${DIR})
+(VERSION='-v20.x'; DIR=\".\"; FILENAME=$(curl -s -L "https://nodejs.org/dist/latest${VERSION}" | grep 'tar.gz' | grep 'linux-x64' | cut -d'\"' -f2); curl -s -L https://nodejs.org/dist/latest${VERSION}/${FILENAME} | tar -xvz --strip-components 1 -C ${DIR})
 
 ## but use a other nodejs version for the install
 (PATH="./bin:$PATH"; npx -p node@16.4 -p yarn yarn install)
