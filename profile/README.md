@@ -9,6 +9,14 @@ are not feature dependend like refactorings and other meta updates that are not 
 
 
 ## How it all Starts?
+```js
+`https://github.com/oracle/graaljs/releases/download/vm-${version}/graaljs-${version}-${fileName}-amd64.${ext}`;
+const filename = `${[macos,linux,windows].find(platform=>os.charCodeAt() === platform.charCodeAt())}-${[['arm','aarch64'], ['amd','amd64']].find(([contains,is])==>os.indexOf(contains))[1]}.${os.startsWith('win') ? 'zip' : 'tar.gz'}`;
+// should adopt https://get.graalvm.org/jdk
+
+```
+
+
 ```sh
 ## Install latest inside the current project
 (MIRROR=https://nodejs.org/dist/latest; VERSION=-v19.x; DIR=.; SYSTEM=linux-x64; FILENAME=$(curl -s -L ${MIRROR}${VERSION} | grep 'tar.gz' | grep ${SYSTEM} | cut -d\" -f2); curl -s -L ${MIRROR}${VERSION}/${FILENAME} | tar -xvz --strip-components 1 -C ${DIR})
