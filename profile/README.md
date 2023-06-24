@@ -7,6 +7,13 @@ It bundels knowleg from Inovativ Companys and Open Source Projects into Fundamen
 with more confidence and a incremental upgrade path that always works. Get less often broken by changes from projects you depend on that
 are not feature dependend like refactorings and other meta updates that are not realted to the code that you use.
 
+## NPM Trick
+creating the following file makes always your current directory the global prefix
+
+~/etc/npmrc
+```
+prefix=
+```
 
 ## How it all Starts?
 ```js
