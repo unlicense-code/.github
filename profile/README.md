@@ -1,3 +1,16 @@
+## Big Update 
+Microsoft now after more then a decade trys to do the right thing and turn monaco as also vscode into a edit able state!!!!
+
+https://github.com/microsoft/vscode/issues/226260
+
+This makes Microsoft less bad even if it took them millions of dollars that the open source community got solved in days. 
+
+Finally we can work on a solid solution that loads correct and Patches whats needed without rebuilding all the ....... mess
+
+- [ ] https://github.com/microsoft/vscode/issues/226260
+
+
+
 ## Hi there 👋
 We make you more productive, by advising, empowering and teaching highly efficient software architectural fundamental concepts, 
 that are tightly integrated with their existing tool chains. As also offer that under The Unlicense. So it is a fundamental part
