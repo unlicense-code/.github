@@ -2,6 +2,8 @@
 
 ```sh
 DIR=~/.local; SYSTEM=linux-x64; MIRROR=https://nodejs.org/dist; VERSION=$(curl -s $MIRROR/index.json | grep -m1 -o '"version":"v[0-9.]*"' | cut -d'"' -f4); curl -sL $MIRROR/$VERSION/node-$VERSION-$SYSTEM.tar.gz | tar -xvz --strip-components=1 -C $DIR --exclude='./*.md' --exclude='LICENSE'
+
+VERSION=0.8.22 curl -L https://github.com/astral-sh/uv/releases/download/$VERSION/uv-x86_64-unknown-linux-gnu.tar.gz | tar --strip-components=1 -C ~/.local/bin -xzf -
 ```
 
 
