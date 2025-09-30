@@ -1,7 +1,7 @@
 ## Node installer update
 
 ```sh
-DIR=~/.local; SYSTEM=linux-x64; MIRROR=https://nodejs.org/dist; VERSION=$(curl -s $MIRROR/index.json | grep -m1 -o '"version":"v[0-9.]*"' | cut -d'"' -f4); curl -sL $MIRROR/$VERSION/node-$VERSION-$SYSTEM.tar.gz | tar -xvz --strip-components=1 -C $DIR --exclude='CHANGELOG.md' --exclude='LICENSE' --exclude='README.md'
+DIR=~/.local; SYSTEM=linux-x64; MIRROR=https://nodejs.org/dist; VERSION=$(curl -s $MIRROR/index.json | grep -m1 -o '"version":"v[0-9.]*"' | cut -d'"' -f4); curl -sL $MIRROR/$VERSION/node-$VERSION-$SYSTEM.tar.gz | tar -xvz --strip-components=1 -C $DIR --exclude='./*.md' --exclude='LICENSE'
 ```
 
 
